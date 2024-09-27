@@ -4,7 +4,7 @@ import Home from "./veiws/Home";
 
 function App() {
   return (
-    <main className="">
+    <main className="font-poppins">
       <NavBar />
       <Home />
     </main>

@@ -1,51 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaUser } from 'react-icons/fa'
+import TabItem from './TabItem'
 
-const HeroSectionTab = () => {
+const HeroSectionTab = ({currentTab, setCurrentTab, tabs}) => {
 
-    const Tabs = [
-        {
-            Tab: 'For HR Managers',
-            value: 1,
-            visiblity: true
-        },
-        {
-            Tab: 'For Line Managers',
-            value: 2,
-            visiblity: false
-        },
-        {
-            Tab: 'For Employees',
-            value: 3,
-            visiblity: false
-        },
-    ]
-
-
-    const tabItem = ({title, value, visiblity}) => {
-        return (
-            <div className={`${visiblity ? 'bg-blue-600' : 'bg-white border-solid border-[1px] border-secondary'}  min-w-[150px] flex border-solid border-[1px] rounded-full p-1 items-center gap-2`}>
-                <div className={`${visiblity ? 'bg-white text-blue-600' : 'bg-gray-200 text-secondary'} p-2 rounded-full w-[40px] h-[40px] grid justify-center content-center mr-2`}>
-                    <FaUser />
-                </div>
-                <p className={`${visiblity ? 'text-white' : 'text-secondary'} font-base mr-6`}>For HR Managers</p>
-            </div>
-        )
+    const onTabChangeHandler = (e) => {
+        const value = e.target.getAttribute('data-value');
+        setCurrentTab(value);
     }
 
   return (
-    <div class=" dark:border-gray-700 mt-6">
-        <ul class="flex flex-wrap gap-2 -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-            {/* <li class="me-2"> */}
+    <div class="mt-6">
+        <ul class="flex gap-2 w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400">
                 {
-                    Tabs?.map((tab) => {
-                        return tabItem(tab);
+                    tabs?.map((tab) => {
+                        return <TabItem tab={tab} onTabChangeHandler={onTabChangeHandler} currentTab={currentTab} />;
                     })
                 }
-            {/* </li> */}
-            
         </ul>
-
     </div>
   )
 }
