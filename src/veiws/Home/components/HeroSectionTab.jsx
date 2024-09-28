@@ -12,7 +12,7 @@ const HeroSectionTab = ({currentTab, setCurrentTab, tabs}) => {
 
   return (
     <div class="mt-6">
-        <ul class="flex gap-2 w-full text-sm font-medium">
+        <ul class="flex flex-row gap-2 text-sm font-medium">
                 {
                     tabs?.map((tab) => {
                         return <TabItem tab={tab} onTabChangeHandler={onTabChangeHandler} currentTab={currentTab} />;
