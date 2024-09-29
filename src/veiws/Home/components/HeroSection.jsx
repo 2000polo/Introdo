@@ -5,15 +5,26 @@ import { BiChat } from 'react-icons/bi';
 const HeroSection = () => {
 
   const [currentTab, setCurrentTab] = useState(1);
+  const [progress, setProgress] = useState(0); // Tracks the progress percentage
 
   useEffect(() => {
-    // Increment every 5 seconds
+    // Set interval to update progress every 100ms
     const interval = setInterval(() => {
-      setCurrentTab((prevCount) => (prevCount === 3 ? 1 : prevCount + 1));
-    }, 5000); 
+      setProgress((prevProgress) => {
+        if (prevProgress >= 100) {
+          // Once progress reaches 100%, reset progress and switch tab
+          setCurrentTab((prevTab) => (prevTab < 3 ? prevTab + 1 : 1)); // Switch between tabs 1, 2, 3
+          return 0; // Reset progress
+        }
+        return prevProgress + 2; // Increment progress by 2% every 100ms
+      });
+    }, 100); // 100ms interval (to make 5 seconds for full progress)
 
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
   }, []);
+
+  // console.log('printing the interval progress', progress)
 
   const tabs = [
     {
@@ -54,7 +65,7 @@ const HeroSection = () => {
           {/* <HeroSectionTab tabs={tabs} setCurrentTab={setCurrentTab} currentTab={currentTab} /> */}
         </div>
         <div className="place-self-center md:place-self-start col-span-12 md:col-span-9">
-          <HeroSectionTab tabs={tabs} setCurrentTab={setCurrentTab} currentTab={currentTab} />
+          <HeroSectionTab tabs={tabs} setCurrentTab={setCurrentTab} currentTab={currentTab} setProgress={setProgress} />
         </div>
 
         <section className='col-span-12 grid gap-5 grid-cols-12 place-items-center mt-6'>
@@ -74,18 +85,26 @@ const HeroSection = () => {
             </div>
 
             <div className="col-span-10 md:col-span-9 w-full ">
-                <div className=" place-self-start w-full">
-                  <div className="md:grid hidden ">
+                <div className="relative place-self-start w-full">
+                  
+                  <div className="relative md:grid hidden ">
+                    
                     {
                       tabs?.map((tab) => {
                         return (
-                          <div className={`w-[90%] ${tab?.align} ${currentTab === tab?.value ? 'visible' : 'hidden'}
+                          <div className={`relative w-[90%] ${tab?.align} ${currentTab === tab?.value ? 'visible' : 'hidden'}
                           md:mt-2 p-7 rounded-3xl border-blue-200 border-2 divide-y divide-blue-200 text-primary`}
                             
                             style={{
                               boxShadow: tab?.['box-shadow']
                             }}
                           >
+                            <div className="w-[90%] top-0 left-0 overflow-hidden ">
+                              <div
+                                className="h-1 bg-gradient-to-r from-[#FC1777] to-[#3A86FF] rounded-full transition-all rounded-full ease-in-out"
+                                style={{ width: `${progress}% ` }}
+                              ></div>
+                            </div>
                             <p className='text-lg font-poppins pb-8'>Handle employee information digitally on our user-friendly platform. With automation, accuracy is guaranteed for reliable record-keeping. </p>
                             <p className='text-lg font-poppins pt-8 pb-8'>Handle employee information digitally on our user-friendly platform. With automation, accuracy is guaranteed for reliable record-keeping. </p>
                             <p className='text-lg font-poppins pt-8'>Handle employee information digitally on our user-friendly platform. With automation, accuracy is guaranteed for reliable record-keeping. </p>

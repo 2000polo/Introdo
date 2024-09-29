@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { FaUser } from 'react-icons/fa'
 import TabItem from './TabItem'
 
-const HeroSectionTab = ({currentTab, setCurrentTab, tabs}) => {
+const HeroSectionTab = ({currentTab, setCurrentTab, tabs, setProgress}) => {
 
     const onTabChangeHandler = (e) => {
         const value = e.target.getAttribute('data-value');
         console.log(value)
         setCurrentTab(parseInt(value));
+        setProgress(prevValue => 1)
     }
 
   return (
