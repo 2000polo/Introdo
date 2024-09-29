@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import HeroSectionTab from './HeroSectionTab'
 import { BiChat } from 'react-icons/bi';
+import { IoGitCompareOutline } from 'react-icons/io5';
+import { RiEditLine } from 'react-icons/ri';
 
 const HeroSection = () => {
 
@@ -30,35 +32,38 @@ const HeroSection = () => {
     {
         Tab: 'For HR Managers',
         value: 1,
-        tab_color: 'blue-600',
+        tab_color: 'bg-blue-600',
         'box-shadow':  "40px 40px #A4C7FF, 80px 80px #81B2FF",
         'box-shadow-min':  "5px 5px #A4C7FF, 10px 10px #81B2FF",
         'align': 'place-self-start',
-        'tab_border': 'border-blue-600'
+        'tab_border': 'border-blue-600',
+        'card_border': 'border-blue-300'
     },
     {
         Tab: 'For Line Managers',
         value: 2,
-        tab_color: 'violet-600',
+        tab_color: 'bg-violet-600',
         'box-shadow': "-40px 40px #8A70B0, 40px 80px #69489A",
         'box-shadow-min': "-5px 5px #8A70B0, 10px 10px #69489A",
         'align': 'place-self-center',
-        'tab_border': 'border-violet-600'
+        'tab_border': 'border-violet-600',
+        'card_border': 'border-violet-300'
     },
     {
         Tab: 'For Employees',
         value: 3,
-        tab_color: 'orange-600',
+        tab_color: 'bg-orange-600',
         'box-shadow': "-40px 40px #FFC58A, -80px 80px #FFAE5C",
         'box-shadow-min': "-5px 5px #FFC58A, -10px 10px #FFAE5C",
         'align': 'place-self-end',
-        'tab_border': 'border-orange-600'
+        'tab_border': 'border-orange-600',
+        'card_border': 'border-orange-300'
     },
   ]
 
   return (
     <div className="grid grid-cols-12 justify-items-center px-1 md:px-24 lg:px-64 py-20 gap-6 ">
-        <span class=" col-span-12 w-fit rounded-full py-2 px-6 text-[#FC1777] text-semibold md:text-lg font-medium me-2 rounded border-2 border-[#FC1777]">EMPOWER EVERY ROLE</span>
+        <span className=" col-span-12 w-fit rounded-full py-2 px-6 text-[#FC1777] text-semibold md:text-lg font-medium me-2 rounded border-2 border-[#FC1777]">EMPOWER EVERY ROLE</span>
         <h1 className=' col-span-12 text-4xl md:text-6xl font-bold w-fit text-secondary'>Triple The Benefits!</h1>
         
         <div className="hidden md:block col-span-2 md:col-span-3">
@@ -69,17 +74,17 @@ const HeroSection = () => {
         </div>
 
         <section className='col-span-12 grid gap-5 grid-cols-12 place-items-center mt-6'>
-            <div className="flex md:flex-col rotate-[-90deg] md:rotate-0 col-span-2 md:col-span-3 divide-y divide-blue-200 text-base md:text-lg text-secondary">
+            <div className="flex flex-row-reverse md:flex-col rotate-[-90deg] md:rotate-0 col-span-2 md:col-span-3 divide-y divide-blue-200 text-base md:text-lg text-secondary">
                 <div className="flex p-4 gap-2 align-self">
                   <div className="text-4xl"><BiChat /></div>
                   <div className="font-semibold min-w-[160px]">Streamline Workforce Management </div>
                 </div>
                 <div className="flex p-4 gap-2 align-self">
-                  <div className="text-4xl"><BiChat /></div>
+                  <div className="text-4xl"><IoGitCompareOutline /></div>
                   <div className="font-semibold min-w-[160px]">Streamline Workforce Management </div>
                 </div>
                 <div className="flex p-4 gap-2 align-self">
-                  <div className="text-4xl"><BiChat /></div>
+                  <div className="text-4xl"><RiEditLine /></div>
                   <div className="font-semibold min-w-[160px]">Streamline Workforce Management </div>
                 </div>
             </div>
@@ -90,10 +95,10 @@ const HeroSection = () => {
                   <div className="relative md:grid hidden ">
                     
                     {
-                      tabs?.map((tab) => {
+                      tabs?.map((tab, i) => {
                         return (
-                          <div className={`relative w-[90%] ${tab?.align} ${currentTab === tab?.value ? 'visible' : 'hidden'}
-                          md:mt-2 p-7 rounded-3xl border-blue-200 border-2 divide-y divide-blue-200 text-primary`}
+                          <div key={i} className={`relative w-[90%] ${tab?.align} ${currentTab === tab?.value ? 'visible' : 'hidden'}
+                          md:mt-2 p-7 rounded-3xl ${tab.card_border} border-2 divide-y divide-blue-200 text-primary`}
                             
                             style={{
                               boxShadow: tab?.['box-shadow']
@@ -115,10 +120,10 @@ const HeroSection = () => {
                   </div>
                   <div className="grid md:hidden ">
                     {
-                      tabs?.map((tab) => {
+                      tabs?.map((tab, i) => {
                         return (
-                          <div className={`w-[95%] ${tab?.align} ${currentTab === tab?.value ? 'visible' : 'hidden'}
-                          md:mt-2 p-7 rounded-3xl border-blue-200 border-2 divide-y divide-blue-200 text-primary`}
+                          <div key={i} className={`w-[95%] ${tab?.align} ${currentTab === tab?.value ? 'visible' : 'hidden'}
+                          md:mt-2 p-7 rounded-3xl ${tab.card_border} border-2 divide-y divide-blue-200 text-primary`}
                             
                             style={{
                               boxShadow: tab?.['box-shadow-min']

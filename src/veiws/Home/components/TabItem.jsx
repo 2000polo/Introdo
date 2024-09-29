@@ -8,12 +8,12 @@ const TabItem = ({currentTab, onTabChangeHandler, tab: {Tab, value, visiblity, t
     return (
         <>
             <div data-value={value+''} onClick={onTabChangeHandler} className={` flex md:hidden ${currentTab === value ? `border-b-4 ${tab_border}` : ''} pb-1 items-center gap-1`}>
-                <div data-value={value+''} className={`${currentTab === value ? `text-white ${'bg-'+tab_color}` : ' text-secondary'} p-2 rounded-full grid justify-center content-center`}>
+                <div data-value={value+''} className={`${currentTab === value ? `text-white ${tab_color}` : ' text-secondary'} p-2 rounded-full grid justify-center content-center`}>
                     <FaUser />
                 </div>
                 <p data-value={value+''} className={`${currentTab === value ? 'text-secondary' : 'text-secondary'} text-sm mr-6`}>{Tab}</p>
             </div>
-            <div data-value={value+''} onClick={onTabChangeHandler} className={`hidden md:flex ${currentTab === value ? `bg-${tab_color}` : ' border-solid border-[1px] border-secondary'} border-solid border-[1px] rounded-full p-1 items-center gap-2`}>
+            <div data-value={value+''} onClick={onTabChangeHandler} className={`hidden md:flex ${currentTab === value ? `${tab_color}` : ' border-solid border-[1px] border-secondary'} border-solid border-[1px] rounded-full p-1 items-center gap-2`}>
                 <div data-value={value+''} className={`${currentTab === value ? `bg-white ${'text-'+tab_color}` : 'bg-gray-200 text-secondary'} p-2 rounded-full w-[40px] h-[40px] grid justify-center content-center mr-2`}>
                     <FaUser />
                 </div>

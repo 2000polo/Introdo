@@ -43,7 +43,7 @@ const PerksSection = () => {
 
                         <div className=" text-white bg-gradient-to-br from-amber-400 to-pink-500 p-8 flex h-full flex-col rounded-3xl">
                             <div className=" pb-3 ">
-                                <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-950 max-lg:text-center">
+                                <p className="mt-2 md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">
                                     Global Payroll Simplicity
                                 </p>
                                 <p className="mt-2 max-w-lg font-base text-lg text-sm/6 max-lg:text-center">
@@ -71,18 +71,18 @@ const PerksSection = () => {
                                     <p className="mt-2 max-w-lg font-base text-lg text-sm/6 max-lg:text-center">
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.
                                     </p> */}
-                                    <div className="flex text-gray-800 gap-2 border-b-2 pb-4">
+                                    <div className="flex text-gray-800 gap-2 border-b-2 pb-1 lg:pb-3">
                                         <img className='w-[48px] h-[48px]' src={avatar1} alt="" />
                                         <div className="">
                                             <p className='font-semibold'>Fathima Saleem</p>
                                             <p className='text-sm text-gray-400'>(Aug 07, 2024 - Aug 15, 2024)</p>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col text-center text-gray-800 gap-2 pt-8">
+                                    <div className="flex flex-col text-center text-gray-800 gap-2 pt-4 lg:pt-8">
                                         <p className='text-base text-gray-400'>Hours Worked</p>
                                         <div className="flex flex-col text-center">
                                             {
-                                                105 === 105 ?
+                                                minutes === 15 ?
                                                 <div className="flex items-center gap-2 mb-3 justify-center">
                                                     <FcApproval fontSize={24} />
                                                     <p className='font-bold text-2xl mb-0 '>Completed</p>
@@ -113,7 +113,7 @@ const PerksSection = () => {
                         <div className="h-[400px] bg-gradient-to-b from-[#FEBED9] to-[#C8DDFF] rounded-3xl  ">
                             <div className=" flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
                             <div className=" pt-8 sm:px-8 sm:pt-8 text-primary text-center">
-                                <p className=" text-4xl font-semibold tracking-tight text-gray-950 max-lg:text-center">Smart Insights</p>
+                                <p className=" md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">Smart Insights</p>
                                 <p className="mt-2 max-w-lg font-base text-lg text-sm/6 max-lg:text-center tracking-wide">
                                 Craft customized reports and dashboards to steer data-driven decisions. All your historic employee data within one end-to-end solution.
                                 </p>
@@ -126,7 +126,7 @@ const PerksSection = () => {
                     <div className="col-span-3 lg:col-span-1 relative lg:col-start-3 lg:row-start-1 lg:row-span-3 overflow-hidden ">
                         <div className=" overflow-hidden text-white bg-gradient-to-br from-[#69489A] to-[#5E9CFF] p-8 flex h-full flex-col rounded-3xl">
                             <div className=" pb-3 ">
-                                <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-950 max-lg:text-center">
+                                <p className="mt-2 md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">
                                     Global Payroll Simplicity
                                 </p>
                                 <p className="mt-2 max-w-lg font-base text-lg text-sm/6 max-lg:text-center">
@@ -147,7 +147,7 @@ const PerksSection = () => {
             
             <div className="bg-gradient-to-br from-[#FD6BA8] to-[#5E9CFF] rounded-3xl w-full overflow-hidden ">
                 <div className="h-[450px] md:h-full text-white relative py-8 px-8 sm:pt-8 flex flex-col lg:flex-row flex-row-reverse text-end rounded-[calc(theme(borderRadius.lg)+1px)]">
-                    <div className="lg:w-[65%]">
+                    <div className="lg:w-[65%] text-start">
                         <p className=" md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">Rock-Solid Compliance</p>
                         <p className="mt-2 max-w-lg text-gray-200 font-base md:text-lg text-sm/6 max-lg:text-center tracking-wide">
                         Stay GCC law-aligned amidst changing regulations. Worry-free compliance across locations, preventing penalties and legal hassles.                        </p>
@@ -162,18 +162,19 @@ const PerksSection = () => {
                 </div>
             </div>
             <div className="bg-gradient-to-b from-[#8A70B0] to-[#482084] rounded-3xl w-full overflow-hidden ">
-                <div className="h-[350px] md:h-full text-white relative py-8 px-8 sm:pt-8 flex flex-col lg:flex-row flex-row-reverse text-end rounded-[calc(theme(borderRadius.lg)+1px)]">
-                    <div className="lg:w-[65%]">
-                        <p className=" md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">Cloud-Powered Savings</p>
-                        <p className="mt-2 max-w-lg text-gray-200 font-base md:text-lg text-sm/6 max-lg:text-center tracking-wide">
-                        Centralize people management with one HR software. Save time and cut costs by leveraging cloud technology.                         </p>
-                    </div>
+                <div className="h-[350px] md:h-full text-white relative py-8 px-16 sm:pt-8 flex flex-col lg:flex-row flex-row-reverse text-end rounded-[calc(theme(borderRadius.lg)+1px)]">
+                    
                     <div className="absolute lg:h-full bottom-0 right-0 left-0">
                         <img
                             className="h-full size-full object-cover object-top self-end"
                             src={gridImage5}
                             alt=""
                         />
+                    </div>
+                    <div className="lg:w-[100%]">
+                        <p className=" md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">Cloud-Powered Savings</p>
+                        <p className="mt-2 max-w-lg text-gray-200 font-base md:text-lg text-sm/6 max-lg:text-center tracking-wide">
+                        Centralize people management with one HR software. Save time and cut costs by leveraging cloud technology.                         </p>
                     </div>
                 </div>
             </div>
