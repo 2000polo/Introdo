@@ -37,7 +37,7 @@ const HeroSection = () => {
   ]
 
   return (
-    <div className="grid grid-cols-12 justify-items-center px-1 md:px-24 lg:px-64 pt-20 gap-6 ">
+    <div className="grid grid-cols-12 justify-items-center px-1 md:px-24 lg:px-64 py-20 gap-6 ">
         <span class=" col-span-12 w-fit rounded-full py-2 px-6 text-[#FC1777] text-semibold md:text-lg font-medium me-2 rounded border-2 border-[#FC1777]">EMPOWER EVERY ROLE</span>
         <h1 className=' col-span-12 text-4xl md:text-6xl font-bold w-fit text-secondary'>Triple The Benefits!</h1>
         
