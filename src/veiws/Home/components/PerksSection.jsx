@@ -43,7 +43,7 @@ const PerksSection = () => {
 
                         <div className=" text-white bg-gradient-to-br from-amber-400 to-pink-500 p-8 flex h-full flex-col rounded-3xl">
                             <div className=" pb-3 ">
-                                <p className="mt-2 md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">
+                                <p className="mt-2 md:text-4xl md:font-semibold font-bold text-xl tracking-tight text-gray-950 max-lg:text-center">
                                     Global Payroll Simplicity
                                 </p>
                                 <p className="mt-2 max-w-lg font-base text-lg text-sm/6 max-lg:text-center">
@@ -112,8 +112,8 @@ const PerksSection = () => {
 
                         <div className="h-[400px] bg-gradient-to-b from-[#FEBED9] to-[#C8DDFF] rounded-3xl  ">
                             <div className=" flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
-                            <div className=" pt-8 sm:px-8 sm:pt-8 text-primary text-center">
-                                <p className=" md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">Smart Insights</p>
+                            <div className=" pt-8 px-4 sm:pt-8 text-primary text-center">
+                                <p className=" md:text-4xl md:font-semibold font-bold text-xl tracking-tight text-gray-950 max-lg:text-center">Smart Insights</p>
                                 <p className="mt-2 max-w-lg font-base text-lg text-sm/6 max-lg:text-center tracking-wide">
                                 Craft customized reports and dashboards to steer data-driven decisions. All your historic employee data within one end-to-end solution.
                                 </p>
@@ -126,11 +126,11 @@ const PerksSection = () => {
                     <div className="col-span-3 lg:col-span-1 relative lg:col-start-3 lg:row-start-1 lg:row-span-3 overflow-hidden ">
                         <div className=" overflow-hidden text-white bg-gradient-to-br from-[#69489A] to-[#5E9CFF] p-8 flex h-full flex-col rounded-3xl">
                             <div className=" pb-3 ">
-                                <p className="mt-2 md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">
-                                    Global Payroll Simplicity
+                                <p className="mt-2 md:text-4xl md:font-semibold font-bold text-xl tracking-tight text-gray-950 max-lg:text-center">
+                                    Legacy Harmony
                                 </p>
                                 <p className="mt-2 max-w-lg font-base text-lg text-sm/6 max-lg:text-center">
-                                    Manage multi-currency payroll across the GCC and beyond, in English & Arabic. Seamless onboarding included!                          </p>
+                                Maximize operational efficiency with zero data loss. Sync all your business tools with an open API for seamless data integration.                    </p>
                             </div>
                             <div className=" absolute bottom-0 right-0 left-0 flex w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
                                 <img
@@ -148,7 +148,7 @@ const PerksSection = () => {
             <div className="bg-gradient-to-br from-[#FD6BA8] to-[#5E9CFF] rounded-3xl w-full overflow-hidden ">
                 <div className="h-[450px] md:h-full text-white relative py-8 px-8 sm:pt-8 flex flex-col lg:flex-row flex-row-reverse text-end rounded-[calc(theme(borderRadius.lg)+1px)]">
                     <div className="lg:w-[65%] text-start">
-                        <p className=" md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">Rock-Solid Compliance</p>
+                        <p className=" md:text-4xl md:font-semibold font-bold text-xl tracking-tight text-gray-950 max-lg:text-center">Rock-Solid Compliance</p>
                         <p className="mt-2 max-w-lg text-gray-200 font-base md:text-lg text-sm/6 max-lg:text-center tracking-wide">
                         Stay GCC law-aligned amidst changing regulations. Worry-free compliance across locations, preventing penalties and legal hassles.                        </p>
                     </div>
@@ -172,7 +172,7 @@ const PerksSection = () => {
                         />
                     </div>
                     <div className="lg:w-[100%]">
-                        <p className=" md:text-4xl font-semibold text-xl tracking-tight text-gray-950 max-lg:text-center">Cloud-Powered Savings</p>
+                        <p className=" md:text-4xl md:font-semibold font-bold text-xl tracking-tight text-gray-950 max-lg:text-center">Cloud-Powered Savings</p>
                         <p className="mt-2 max-w-lg text-gray-200 font-base md:text-lg text-sm/6 max-lg:text-center tracking-wide">
                         Centralize people management with one HR software. Save time and cut costs by leveraging cloud technology.                         </p>
                     </div>
