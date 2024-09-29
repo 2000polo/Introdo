@@ -7,7 +7,7 @@ const HeroSectionTab = ({currentTab, setCurrentTab, tabs}) => {
     const onTabChangeHandler = (e) => {
         const value = e.target.getAttribute('data-value');
         console.log(value)
-        setCurrentTab(value);
+        setCurrentTab(parseInt(value));
     }
 
   return (

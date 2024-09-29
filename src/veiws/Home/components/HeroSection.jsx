@@ -1,15 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import HeroSectionTab from './HeroSectionTab'
 import { BiChat } from 'react-icons/bi';
 
 const HeroSection = () => {
 
-  const [currentTab, setCurrentTab] = useState('1');
+  const [currentTab, setCurrentTab] = useState(1);
+
+  useEffect(() => {
+    // Increment every 5 seconds
+    const interval = setInterval(() => {
+      setCurrentTab((prevCount) => (prevCount === 3 ? 1 : prevCount + 1));
+    }, 5000); 
+
+    return () => clearInterval(interval); // Clean up the interval on component unmount
+  }, []);
 
   const tabs = [
     {
         Tab: 'For HR Managers',
-        value: '1',
+        value: 1,
         tab_color: 'blue-600',
         'box-shadow':  "40px 40px #A4C7FF, 80px 80px #81B2FF",
         'box-shadow-min':  "5px 5px #A4C7FF, 10px 10px #81B2FF",
@@ -18,7 +27,7 @@ const HeroSection = () => {
     },
     {
         Tab: 'For Line Managers',
-        value: '2',
+        value: 2,
         tab_color: 'violet-600',
         'box-shadow': "-40px 40px #8A70B0, 40px 80px #69489A",
         'box-shadow-min': "-5px 5px #8A70B0, 10px 10px #69489A",
@@ -27,7 +36,7 @@ const HeroSection = () => {
     },
     {
         Tab: 'For Employees',
-        value: '3',
+        value: 3,
         tab_color: 'orange-600',
         'box-shadow': "-40px 40px #FFC58A, -80px 80px #FFAE5C",
         'box-shadow-min': "-5px 5px #FFC58A, -10px 10px #FFAE5C",
