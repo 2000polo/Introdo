@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import gridImage1 from '../../../assets/gridImage1.png';
 import avatar1 from '../../../assets/avatar1.png';
 import gridImage3 from '../../../assets/gridImage3.png';
@@ -6,8 +6,30 @@ import gridImage4 from '../../../assets/gridImage4.png';
 import gridImage5 from '../../../assets/gridImage5.png';
 import { FaAngleUp } from 'react-icons/fa';
 import { IoChevronUp } from 'react-icons/io5';
+import { FcApproval } from 'react-icons/fc';
 
 const PerksSection = () => {
+    const [seconds, setSeconds] = useState(0); // Total seconds elapsed
+    const totalTime = 60; // 60 seconds (from 14:00 to 14:59)
+
+    useEffect(() => {
+        if (seconds < totalTime) {
+        const timer = setInterval(() => {
+            setSeconds((prevSeconds) => prevSeconds + 1);
+        }, 1000); // Update every second
+        return () => clearInterval(timer);
+        }
+    }, [seconds]);
+
+    // To Convert seconds to minutes (starting from 14 as per in the feature desc doc)
+    const minutes = Math.floor(14 + seconds / 60); 
+    // To Get the current second (0-59)
+    const currentSeconds = seconds % 60; 
+
+    // Calculate progress percentage based on the seconds elapsed
+    const progressPercentage = (seconds / totalTime) * 100;
+
+
   return (
     <div className='grid grid-cols-12 justify-items-center px-3 md:px-24 lg:px-64 pt-20 gap-6'>
         <span class=" col-span-12 w-fit rounded-full py-2 px-6 text-[#FC1777] text-semibold md:text-lg font-medium me-2 rounded border-2 border-[#FC1777]">WHY INTRODO?</span>
@@ -59,10 +81,20 @@ const PerksSection = () => {
                                     <div className="flex flex-col text-center text-gray-800 gap-2 pt-8">
                                         <p className='text-base text-gray-400'>Hours Worked</p>
                                         <div className="flex flex-col text-center">
-                                            <p className='font-bold text-2xl mb-3'>14:36 Hours</p>
+                                            {
+                                                105 === 105 ?
+                                                <div className="flex items-center gap-2 mb-3 justify-center">
+                                                    <FcApproval fontSize={24} />
+                                                    <p className='font-bold text-2xl mb-0 '>Completed</p>
+                                                </div>
+                                                : 
+                                                <p className='font-bold text-2xl mb-3'>{minutes}:{currentSeconds < 10 ? `0${currentSeconds}` : currentSeconds} Hours</p>
+                                            }
                                             
                                             <div class="w-full h-2 bg-blue-200 rounded-full ">
-                                                <div class="w-2/3 h-full text-center text-xs text-white bg-gradient-to-r from-[#FC1777] to-[#3A86FF] rounded-full">
+                                                <div style={{
+                                                    width: `${progressPercentage}%`
+                                                }} class="h-full text-center text-xs text-white bg-gradient-to-r from-[#FC1777] to-[#3A86FF] rounded-full transition-all rounded-full ease-in-out">
                                                 </div>
                                             </div>
                                         </div>
