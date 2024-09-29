@@ -26,7 +26,7 @@ const Footer = () => {
             </div>
 
             {/* <!-- component --> */}
-            <form className="max-w-md mx-auto flex-1">
+            <form className="max-w-md mx-auto flex-1 mt-4">
                 <h1 className='w-full text-lg text-center font-semibold text-white my-2'>HR Updates, straight to your Inbox - Subscribe Today </h1>
                 <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
                     Search
@@ -53,7 +53,7 @@ const Footer = () => {
                         type="search"
                         id="default-search"
                         className="block w-full px-3 py-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-White focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Search Mockups, Logos..."
+                        placeholder="Enter work Email"
                         required
                     />
                     <button
