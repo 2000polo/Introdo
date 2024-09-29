@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import Home from "./veiws/Home";
 
@@ -7,6 +8,7 @@ function App() {
     <main className="font-poppins">
       <NavBar />
       <Home />
+      <Footer />
     </main>
   );
 }
